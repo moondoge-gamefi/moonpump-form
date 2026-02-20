@@ -42,13 +42,11 @@
       justify-content:center;
       padding: 30px 14px;
 
-      /* Seamless deep space + nebula (no repeating tiles) */
-      background:
-        radial-gradient(1200px 800px at 18% 10%, rgba(255,211,106,.16), transparent 65%),
-        radial-gradient(1100px 700px at 86% 16%, rgba(123,231,255,.12), transparent 66%),
-        radial-gradient(1400px 900px at 55% 96%, rgba(214,168,79,.14), transparent 68%),
-        radial-gradient(1200px 850px at 55% 36%, rgba(182,120,255,.08), transparent 72%),
-        linear-gradient(180deg, var(--bg0), var(--bg1));
+      background-color: var(--bg0);
+
+      /* Single background image (no repeating seams) */
+      background: linear-gradient(rgba(6,10,20,.30), rgba(6,10,20,.30)),
+  url("/bg-space.png") center center / cover no-repeat fixed;
       position: relative;
       overflow-x: hidden;
     }
@@ -66,6 +64,8 @@
       filter: drop-shadow(0 0 14px rgba(255,211,106,.10));
       transform: translate3d(0,0,0);
       animation: starFloat 26s ease-in-out infinite;
+    
+      display:none !important;
     }
 
     /* Subtle noise */
@@ -77,6 +77,8 @@
       opacity:.055;
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E");
       mix-blend-mode: overlay;
+    
+      display:none !important;
     }
 
     @keyframes starFloat{
@@ -489,12 +491,23 @@
       justify-content: space-between;
       gap: 12px;
     }
-    .metaRow .badgeRow{ margin-top: 0; align-items:center; }
-    .metaRow .topTools{ margin-top: 0; }
+
+    .metaRow .badgeRow{
+      margin-top: 0;
+    }
+
+    .metaRow .topTools{
+      margin-top: 0;
+    }
 
     @media (max-width: 760px){
-      .metaRow{ flex-wrap: wrap; }
-      .metaRow .topTools{ width: 100%; justify-content: flex-start; }
+      .metaRow{
+        flex-wrap: wrap;
+      }
+      .metaRow .topTools{
+        width: 100%;
+        justify-content: flex-start;
+      }
     }
 
   </style>
@@ -505,17 +518,20 @@
       <header>
         <h1>MOONPUMP CASHBACK &amp; REWARD PROMOTION</h1>
         <p class="sub">Secure submission • Recorded TXID reference • Rewards calculated by full $1,000 USDT increments</p>
-                <div class="metaRow">
-<div class="badgeRow" aria-hidden="true">
+        <div class="metaRow">
+
+        <div class="badgeRow" aria-hidden="true">
           <span class="badge">LEADERS • STAKERS • CASHBACK • REWARD • CRYPTO</span>
           <span class="badge">MOONPUMP CASHBACK &amp; REWARD PROGRAM</span>
         </div>
 
+        
+
         <div class="topTools">
           <div id="google_translate_element"></div>
-        </div>
-              </div>
-</header>
+                </div>
+</div>
+      </header>
 
       <form id="promoForm" autocomplete="on" novalidate>
         <div class="grid">
