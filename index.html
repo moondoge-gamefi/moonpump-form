@@ -893,7 +893,7 @@ function closeModal(){
         successBox.textContent = `Submitted. Eligible amount: ${data.eligible_amount_usdt} USDT (${eligible}).`;
 
         openModal(
-          `Your submission has been received successfully.\n\nEligible amount: ${data.eligible_amount_usdt} USDT\nStatus: ${eligible}\n\nThank you for joining the MOONPUMP Cashback & Reward Program.`
+          `Your submission has been received successfully.\nPlease wait for us to verify your transaction details. If the information is accurate and complete, you will receive the bonus within 24-72 hours after verification.\n\nEligible amount: ${data.eligible_amount_usdt} USDT\nStatus: ${eligible}\n\nThank you for joining the MOONPUMP Cashback & Reward Program.`
         );
         lastSubmitSucceeded = true;
       } catch (err) {
