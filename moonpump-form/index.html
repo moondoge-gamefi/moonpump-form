@@ -1,0 +1,872 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MOONPUMP Cashback & Reward Promotion</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon.png">
+  <meta name="theme-color" content="#060A14">
+  <meta name="description" content="MOONPUMP Cashback & Reward Promotion submission form." />
+  <style>
+    :root{
+      --bg0:#060A14;
+      --bg1:#0A1024;
+
+      --text: #F6F2E8;
+      --muted: rgba(246,242,232,.72);
+
+      --goldA:#FFD36A;
+      --goldB:#D6A84F;
+      --goldC:#8B6B2B;
+
+      --aqua:#7BE7FF;
+      --danger:#FF5C7A;
+      --good:#7CFFCA;
+
+      --shadow: 0 24px 80px rgba(0,0,0,.62);
+      --radius: 20px;
+    }
+
+    *{ box-sizing:border-box; }
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial,
+        "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji";
+      color: var(--text);
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding: 30px 14px;
+
+      /* Seamless deep space + nebula (no repeating tiles) */
+      background:
+        radial-gradient(1200px 800px at 18% 10%, rgba(255,211,106,.16), transparent 65%),
+        radial-gradient(1100px 700px at 86% 16%, rgba(123,231,255,.12), transparent 66%),
+        radial-gradient(1400px 900px at 55% 96%, rgba(214,168,79,.14), transparent 68%),
+        radial-gradient(1200px 850px at 55% 36%, rgba(182,120,255,.08), transparent 72%),
+        linear-gradient(180deg, var(--bg0), var(--bg1));
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* Seamless starfield via SVG (no visible tiling) */
+    body::before{
+      content:"";
+      position: fixed;
+      inset:0;
+      pointer-events:none;
+      opacity:.85;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1600' height='900' viewBox='0 0 1600 900'%3E%3Cdefs%3E%3CradialGradient id='g' cx='50%25' cy='50%25' r='50%25'%3E%3Cstop offset='0%25' stop-color='%23ffffff' stop-opacity='1'/%3E%3Cstop offset='60%25' stop-color='%23ffffff' stop-opacity='.35'/%3E%3Cstop offset='100%25' stop-color='%23ffffff' stop-opacity='0'/%3E%3C/radialGradient%3E%3C/defs%3E%3Crect width='1600' height='900' fill='none'/%3E%3Cg opacity='.9'%3E%3Ccircle cx='96' cy='92' r='1.8' fill='white'/%3E%3Ccircle cx='248' cy='210' r='1.1' fill='white'/%3E%3Ccircle cx='392' cy='120' r='1.4' fill='white'/%3E%3Ccircle cx='520' cy='310' r='1.2' fill='white'/%3E%3Ccircle cx='670' cy='180' r='1.6' fill='white'/%3E%3Ccircle cx='820' cy='96' r='1.1' fill='white'/%3E%3Ccircle cx='980' cy='260' r='1.3' fill='white'/%3E%3Ccircle cx='1120' cy='140' r='1.7' fill='white'/%3E%3Ccircle cx='1280' cy='220' r='1.2' fill='white'/%3E%3Ccircle cx='1488' cy='110' r='1.5' fill='white'/%3E%3Ccircle cx='150' cy='520' r='1.2' fill='white'/%3E%3Ccircle cx='310' cy='420' r='1.6' fill='white'/%3E%3Ccircle cx='460' cy='560' r='1.1' fill='white'/%3E%3Ccircle cx='610' cy='470' r='1.4' fill='white'/%3E%3Ccircle cx='760' cy='610' r='1.2' fill='white'/%3E%3Ccircle cx='930' cy='520' r='1.7' fill='white'/%3E%3Ccircle cx='1090' cy='620' r='1.1' fill='white'/%3E%3Ccircle cx='1240' cy='520' r='1.5' fill='white'/%3E%3Ccircle cx='1410' cy='610' r='1.2' fill='white'/%3E%3Ccircle cx='1520' cy='520' r='1.6' fill='white'/%3E%3Ccircle cx='230' cy='820' r='1.4' fill='white'/%3E%3Ccircle cx='410' cy='740' r='1.1' fill='white'/%3E%3Ccircle cx='590' cy='840' r='1.6' fill='white'/%3E%3Ccircle cx='760' cy='760' r='1.2' fill='white'/%3E%3Ccircle cx='930' cy='840' r='1.4' fill='white'/%3E%3Ccircle cx='1110' cy='760' r='1.1' fill='white'/%3E%3Ccircle cx='1290' cy='840' r='1.7' fill='white'/%3E%3Ccircle cx='1460' cy='760' r='1.2' fill='white'/%3E%3C/g%3E%3Cg opacity='.32'%3E%3Ccircle cx='280' cy='140' r='18' fill='url(%23g)'/%3E%3Ccircle cx='1180' cy='460' r='22' fill='url(%23g)'/%3E%3Ccircle cx='860' cy='780' r='16' fill='url(%23g)'/%3E%3C/g%3E%3C/svg%3E");
+      background-size: cover;
+      background-position: center;
+      filter: drop-shadow(0 0 14px rgba(255,211,106,.10));
+      transform: translate3d(0,0,0);
+      animation: starFloat 26s ease-in-out infinite;
+    }
+
+    /* Subtle noise */
+    body::after{
+      content:"";
+      position: fixed;
+      inset:0;
+      pointer-events:none;
+      opacity:.055;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E");
+      mix-blend-mode: overlay;
+    }
+
+    @keyframes starFloat{
+      0%{ transform: translate3d(0,0,0) scale(1); }
+      50%{ transform: translate3d(-14px, 10px, 0) scale(1.02); }
+      100%{ transform: translate3d(0,0,0) scale(1); }
+    }
+
+    .wrap{ width:min(920px,100%); position:relative; }
+
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.04));
+      border: 1px solid rgba(255,211,106,.22);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+      backdrop-filter: blur(16px);
+    }
+
+    header{
+      padding: 26px 22px 16px;
+      border-bottom: 1px solid rgba(255,211,106,.16);
+      background:
+        radial-gradient(900px 260px at 15% 0%, rgba(255,211,106,.18), transparent 62%),
+        radial-gradient(900px 260px at 88% 0%, rgba(123,231,255,.12), transparent 64%),
+        linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+      position: relative;
+    }
+
+    header::before{
+      content:"";
+      position:absolute; left:0; right:0; top:0; height:2px;
+      background: linear-gradient(90deg, var(--goldA), var(--goldB), var(--aqua), var(--goldA));
+      opacity:.95;
+    }
+
+    h1{
+      margin:0;
+      font-size: clamp(18px, 3.2vw, 30px);
+      letter-spacing: .8px;
+      line-height: 1.18;
+      text-transform: uppercase;
+      color: var(--text);
+      text-shadow:
+        0 0 18px rgba(255,211,106,.14),
+        0 0 30px rgba(123,231,255,.06);
+    }
+
+    .sub{
+      margin: 10px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .topTools{
+      margin-top: 12px;
+      display:flex;
+      justify-content:flex-end;
+    }
+    #google_translate_element{
+      display:inline-flex;
+      align-items:center;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,211,106,.20);
+      background: rgba(255,255,255,.04);
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,.03);
+    }
+    .goog-te-gadget{
+      font-family: inherit !important;
+      color: rgba(246,242,232,.78) !important;
+    }
+    .goog-te-gadget span{ display:none; }
+    .goog-te-combo{
+      border-radius: 999px !important;
+      border: 1px solid rgba(255,211,106,.22) !important;
+      background: rgba(9,12,24,.55) !important;
+      color: var(--text) !important;
+      padding: 6px 10px !important;
+      outline: none !important;
+    }
+
+    form{ padding: 18px 22px 22px; }
+
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    @media (max-width: 760px){
+      .grid{ grid-template-columns: 1fr; }
+      .topTools{ justify-content:flex-start; }
+    }
+
+    .field{
+      display:flex;
+      flex-direction:column;
+      gap: 7px;
+      padding: 12px;
+      border-radius: 16px;
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,211,106,.16);
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,.03);
+    }
+
+    label{
+      font-size: 12.5px;
+      color: rgba(246,242,232,.86);
+      letter-spacing: .2px;
+    }
+
+    input[type="text"], input[type="email"], input[type="number"], textarea{
+      width:100%;
+      padding: 12px 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,211,106,.18);
+      outline:none;
+      background: rgba(9,12,24,.55);
+      color: var(--text);
+      font-size: 14.5px;
+    }
+
+    textarea{
+      min-height: 90px;
+      resize: vertical;
+      line-height: 1.4;
+    }
+
+    input::placeholder, textarea::placeholder{ color: rgba(246,242,232,.45); }
+
+    input:focus, textarea:focus{
+      border-color: rgba(255,211,106,.58);
+      box-shadow:
+        0 0 0 4px rgba(255,211,106,.14),
+        0 0 22px rgba(123,231,255,.08);
+    }
+
+    .full{ grid-column: 1 / -1; }
+
+    .noteBox{
+      padding: 14px 14px 12px;
+      border-radius: 16px;
+      background: rgba(255,255,255,.04);
+      border: 1px dashed rgba(255,211,106,.24);
+    }
+
+    .noteTitle{
+      font-size: 12.8px;
+      font-weight: 800;
+      margin:0 0 8px;
+      letter-spacing:.25px;
+      color: rgba(246,242,232,.92);
+    }
+
+    .noteText{
+      margin:0;
+      font-size: 13px;
+      line-height: 1.58;
+      color: rgba(246,242,232,.74);
+      white-space: pre-line;
+    }
+
+    .checkRow{
+      display:flex;
+      gap: 10px;
+      align-items:flex-start;
+      margin-top: 10px;
+    }
+
+    .checkRow input{
+      margin-top: 3px;
+      transform: scale(1.12);
+      accent-color: var(--goldA);
+    }
+
+    .actions{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255,211,106,.14);
+    }
+
+    /* GOLD COIN BUTTON */
+    button{
+      border: 0;
+      cursor: pointer;
+      padding: 14px 26px;
+      border-radius: 999px;
+      font-weight: 950;
+      letter-spacing: .7px;
+      color: #1B1306;
+      min-width: 210px;
+      position: relative;
+      overflow: hidden;
+
+      background:
+        radial-gradient(120px 40px at 30% 25%, rgba(255,255,255,.55), transparent 60%),
+        radial-gradient(140px 60px at 70% 75%, rgba(255,255,255,.20), transparent 62%),
+        linear-gradient(180deg, #FFF1B8 0%, var(--goldA) 22%, var(--goldB) 55%, var(--goldC) 100%);
+
+      box-shadow:
+        0 16px 42px rgba(0,0,0,.30),
+        0 10px 26px rgba(255,211,106,.18),
+        inset 0 2px 0 rgba(255,255,255,.48),
+        inset 0 -10px 18px rgba(0,0,0,.18);
+
+      transform: translateZ(0);
+      transition: transform .14s ease, filter .14s ease, box-shadow .14s ease;
+    }
+
+    /* coin rim */
+    button::before{
+      content:"";
+      position:absolute; inset: 4px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.20);
+      box-shadow:
+        inset 0 0 0 1px rgba(139,107,43,.22),
+        inset 0 8px 18px rgba(255,255,255,.08);
+      pointer-events:none;
+    }
+
+    /* moving sheen */
+    button::after{
+      content:"";
+      position:absolute;
+      top:-60%;
+      left:-40%;
+      width: 55%;
+      height: 220%;
+      background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,.55) 45%, transparent 100%);
+      transform: rotate(22deg);
+      opacity: .0;
+      pointer-events:none;
+    }
+
+    button:hover{
+      transform: translateY(-2px) scale(1.01);
+      box-shadow:
+        0 18px 54px rgba(0,0,0,.34),
+        0 14px 34px rgba(255,211,106,.22),
+        0 0 26px rgba(123,231,255,.10),
+        inset 0 2px 0 rgba(255,255,255,.52),
+        inset 0 -10px 18px rgba(0,0,0,.18);
+      filter: brightness(1.04) saturate(1.05);
+    }
+    button:hover::after{
+      opacity: .85;
+      animation: sheen 1.05s ease-in-out;
+    }
+
+    button:active{
+      transform: translateY(0px) scale(.995);
+      filter: brightness(.99);
+    }
+
+    @keyframes sheen{
+      0%{ left:-45%; }
+      100%{ left:120%; }
+    }
+
+    button:disabled{ opacity:.65; cursor:not-allowed; }
+
+    .btnSpinner{
+      display:none;
+      width: 16px;
+      height: 16px;
+      border-radius: 999px;
+      border: 2px solid rgba(0,0,0,.25);
+      border-top-color: rgba(0,0,0,.55);
+      margin-left: 10px;
+      animation: spin .7s linear infinite;
+      vertical-align: middle;
+    }
+    @keyframes spin{ to{ transform: rotate(360deg);} }
+
+    .error{
+      display:none;
+      color: var(--danger);
+      font-size: 13px;
+      margin-top: 12px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,92,122,.24);
+      background: rgba(255,92,122,.08);
+    }
+
+    .success{
+      display:none;
+      padding: 12px 12px;
+      margin-top: 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(124,255,202,.24);
+      background: rgba(124,255,202,.07);
+      color: rgba(246,242,232,.92);
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .tiny{ font-size: 12px; color: rgba(246,242,232,.55); }
+
+    .badgeRow{
+      margin-top:10px;
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+    .badge{
+      font-size:12px;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid rgba(255,211,106,.20);
+      background:rgba(255,255,255,.04);
+      color:rgba(246,242,232,.78);
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,.03);
+    }
+
+    .previewRow{
+      display:flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 8px;
+      color: rgba(246,242,232,.78);
+      font-size: 12.5px;
+    }
+    .chip{
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,211,106,.18);
+      background: rgba(255,255,255,.04);
+    }
+
+    /* Modal (popup) */
+    .modalOverlay{
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.62);
+      display:none;
+      align-items: center;
+      justify-content: center;
+      padding: 18px;
+      z-index: 9999;
+    }
+    .modal{
+      width: min(520px, 100%);
+      border-radius: 20px;
+      border: 1px solid rgba(255,211,106,.24);
+      background: linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.05));
+      box-shadow: 0 26px 90px rgba(0,0,0,.65);
+      backdrop-filter: blur(16px);
+      overflow: hidden;
+    }
+    .modalHead{
+      padding: 16px 16px 12px;
+      border-bottom: 1px solid rgba(255,211,106,.14);
+      position: relative;
+    }
+    .modalHead::before{
+      content:"";
+      position:absolute; left:0; right:0; top:0; height:2px;
+      background: linear-gradient(90deg, var(--goldA), var(--aqua), var(--goldA));
+      opacity:.95;
+    }
+    .modalTitle{
+      margin:0;
+      font-weight: 900;
+      letter-spacing: .35px;
+      color: rgba(246,242,232,.95);
+      font-size: 16px;
+      text-transform: uppercase;
+    }
+    .modalBody{
+      padding: 14px 16px 16px;
+      color: rgba(246,242,232,.84);
+      line-height: 1.55;
+      font-size: 14px;
+      white-space: pre-line;
+    }
+    .modalActions{
+      padding: 14px 16px 16px;
+      border-top: 1px solid rgba(255,211,106,.14);
+      display:flex;
+      justify-content: center;
+      gap: 10px;
+    }
+    .modalBtn{
+      border: 1px solid rgba(255,211,106,.22);
+      background: rgba(255,255,255,.04);
+      color: rgba(246,242,232,.92);
+      padding: 10px 14px;
+      border-radius: 999px;
+      font-weight: 800;
+      cursor: pointer;
+    }
+    .modalBtnPrimary{
+      border: 0;
+      color: #1B1306;
+      background: linear-gradient(180deg, #FFF1B8 0%, var(--goldA) 28%, var(--goldB) 58%, var(--goldC) 110%);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.35);
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <header>
+        <h1>MOONPUMP CASHBACK &amp; REWARD PROMOTION</h1>
+        <p class="sub">Secure submission • Recorded TXID reference • Rewards calculated by full $1,000 USDT increments</p>
+        <div class="badgeRow" aria-hidden="true">
+          <span class="badge">LEADERS • STAKERS • CASHBACK • REWARD • CRYPTO</span>
+          <span class="badge">MOONPUMP CASHBACK &amp; REWARD PROGRAM</span>
+        </div>
+
+        <div class="topTools">
+          <div id="google_translate_element"></div>
+        </div>
+      </header>
+
+      <form id="promoForm" autocomplete="on" novalidate>
+        <div class="grid">
+          <div class="field">
+            <label for="nameNick">Name (Nickname)</label>
+            <input id="nameNick" type="text" required placeholder="e.g. Moon" />
+          </div>
+
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" type="email" required placeholder="name@example.com" />
+          </div>
+
+          <div class="field">
+            <label for="uplineWallet">Referrer Wallet Address (0x...) - Upline</label>
+            <input id="uplineWallet" type="text" required placeholder="0x..." />
+          </div>
+
+          <div class="field">
+            <label for="uplineRef">Referrer Ref No. (moon-pump.com?ref=...) - Upline</label>
+            <input id="uplineRef" type="text" required placeholder="moon-pump.com?ref=XX" />
+          </div>
+
+          <div class="field">
+            <label for="downlineWallet">Staker Wallet Address (0x...) - Downline</label>
+            <input id="downlineWallet" type="text" required placeholder="0x..." />
+          </div>
+
+          <div class="field">
+            <label for="downlineRef">Staker Ref No. (moon-pump.com?ref=...) - Downline</label>
+            <input id="downlineRef" type="text" required placeholder="moon-pump.com?ref=YY" />
+          </div>
+
+          <div class="field">
+            <label for="txid">TXID of staking (deposit)</label>
+            <input id="txid" type="text" required placeholder="0x... or hyperlink (e.g. https://bscscan.com/tx/0x...)" />
+            <p class="tiny" style="margin:0;">Accepted formats: TX hash (0x...) or hyperlink containing the TX hash.</p>
+          </div>
+
+          <div class="field">
+            <label for="amount">Amount USDT of staking (deposit)</label>
+            <input id="amount" type="number" required min="0" step="any" inputmode="decimal" placeholder="e.g. 1000" />
+            <div class="previewRow" id="previewRow" aria-live="polite">
+              <span class="chip" id="eligibleChip">Eligible amount: 0 USDT</span>
+              <span class="chip" id="eligibleFlagChip">Status: NOT ELIGIBLE &#10060;</span>
+            </div>
+          </div>
+
+          <div class="noteBox full">
+            <p class="noteTitle">Notes and Conditions for Promotional Reward Calculation</p>
+            <p class="noteText">For the avoidance of doubt, by participating in this promotion, you acknowledge and agree to the following terms and calculation rules:
+
+1. Single Transaction Requirement
+Eligibility for promotional rewards shall be determined solely based on the amount deposited in a single transaction. Deposits made in multiple transactions cannot be aggregated, combined, or accumulated to meet the minimum qualifying threshold under any circumstances.
+
+Examples:
+A single deposit of $1,000 USDT = Eligible for reward
+Two separate deposits of $500 USDT each = Not eligible for reward
+
+2. Rounding Down Rule
+Only full increments of $1,000 USDT per single transaction shall be considered for reward calculation. Any excess amount beyond each full $1,000 USDT increment shall be rounded down and disregarded.
+Such excess amounts cannot be carried forward, accumulated, or combined with other transactions for reward eligibility purposes.
+
+Example:
+A deposit of $1,001–1,999 USDT
+Only $1,000 USDT shall be considered for reward calculation.
+The remaining amount exceeding $1,000 USDT shall be excluded and shall not be eligible for accumulation or future credit, in accordance with Clause 1 above.
+
+3. One Reward per Transaction
+Each qualifying transaction shall be entitled to receive promotional rewards only once.
+A single transaction:
+- Cannot receive multiple rewards under the same promotion
+- Cannot be used to claim rewards from multiple promotions
+- Cannot be used to obtain overlapping promotional benefits
+- Under no circumstances shall one transaction be eligible for more than one promotional reward.
+
+*Illustrative Deposit Examples*
+Promotional rewards are granted for every full $1,000 USDT deposited in a single transaction only. Deposits cannot be aggregated across multiple transactions.
+Deposit below $999 USDT = Not eligible
+$1,000–1,999 USDT = Reward calculated based on $1,000 USDT
+$2,000–2,999 USDT = Reward calculated based on $2,000 USDT
+$3,000–3,999 USDT = Reward calculated based on $3,000 USDT
+$4,000–4,999 USDT = Reward calculated based on $4,000 USDT
+$5,000–5,999 USDT = Reward calculated based on $5,000 USDT
+$6,000–6,999 USDT = Reward calculated based on $6,000 USDT
+$7,000–7,999 USDT = Reward calculated based on $7,000 USDT
+$8,000–8,999 USDT = Reward calculated based on $8,000 USDT
+$9,000–9,999 USDT = Reward calculated based on $9,000 USDT
+$10,000–10,999 USDT = Reward calculated based on $10,000 USDT
+And so forth in the same manner for higher amounts.</p>
+
+            <div class="checkRow">
+              <input id="understand" type="checkbox" required />
+              <label for="understand"><strong>I understand</strong></label>
+            </div>
+            <p class="tiny">Required</p>
+          </div>
+
+          <div class="noteBox full">
+            <p class="noteTitle">Promotion Terms and Acceptance</p>
+            <p class="noteText">I hereby confirm that I have read, understood, and agree to be legally bound by all terms and conditions relating to this promotion.
+
+I represent and warrant that all information provided by me in connection with this promotion is true, accurate, complete, and not misleading in any respect.
+
+In the event that any information provided by me is incorrect, incomplete, inaccurate, lost, delayed, or contains errors due to my act, omission, negligence, or failure to comply with the applicable requirements, resulting in any issue, disqualification, delay, or inability to receive the promotional benefits, I acknowledge and agree that MOONPUMP and its affiliates shall not be liable for any direct, indirect, incidental, or consequential loss or damage arising therefrom.
+
+I further expressly waive any right to dispute, challenge, or bring any claim against MOONPUMP in connection with such matters.
+
+MOONPUMP reserves the right, at its sole discretion, to modify, suspend, or terminate this promotion at any time without prior notice.
+
+The decision of MOONPUMP or its authorized approver regarding eligibility, qualification, and distribution of promotional benefits shall be final, conclusive, and binding.</p>
+
+            <div class="checkRow">
+              <input id="agree" type="checkbox" required />
+              <label for="agree"><strong>I agree</strong></label>
+            </div>
+            <p class="tiny">Required</p>
+          </div>
+
+          <div class="field full">
+            <label for="notes">Additional Notes (optional)</label>
+            <textarea id="notes" placeholder="Optional notes"></textarea>
+          </div>
+
+          <input type="text" id="hp" style="display:none" tabindex="-1" autocomplete="off" />
+        </div>
+
+        <div class="actions">
+          <button id="submitBtn" type="submit">
+            Submit <span class="btnSpinner" id="btnSpinner" aria-hidden="true"></span>
+          </button>
+        </div>
+
+        <div class="error" id="errorText"></div>
+        <div class="success" id="successBox"></div>
+      </form>
+    </div>
+  </div>
+
+  <div class="modalOverlay" id="modalOverlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal">
+      <div class="modalHead">
+        <h2 class="modalTitle" id="modalTitle">Submission Successful</h2>
+      </div>
+      <div class="modalBody" id="modalBody"></div>
+      <div class="modalActions">
+        <button id="modalOkBtn" type="button">OK</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // IMPORTANT for Netlify: change this to "/.netlify/functions/submit"
+    // when you add the Netlify proxy function.
+    const API_URL = "/.netlify/functions/submit";
+
+    const qs = new URLSearchParams(location.search);
+    const map = [
+      ["name", "nameNick"],
+      ["email", "email"],
+      ["upline_wallet", "uplineWallet"],
+      ["upline_ref", "uplineRef"],
+      ["downline_wallet", "downlineWallet"],
+      ["downline_ref", "downlineRef"],
+      ["txid", "txid"],
+      ["amount", "amount"],
+      ["notes", "notes"]
+    ];
+    for (const [key, id] of map) {
+      if (qs.has(key)) {
+        const el = document.getElementById(id);
+        if (el) el.value = qs.get(key) ?? "";
+      }
+    }
+
+    const form = document.getElementById("promoForm");
+    const submitBtn = document.getElementById("submitBtn");
+    const btnSpinner = document.getElementById("btnSpinner");
+    const errorText = document.getElementById("errorText");
+    const successBox = document.getElementById("successBox");
+
+    const amountEl = document.getElementById("amount");
+    const eligibleChip = document.getElementById("eligibleChip");
+    const eligibleFlagChip = document.getElementById("eligibleFlagChip");
+
+    const modalOverlay = document.getElementById("modalOverlay");
+    const modalBody = document.getElementById("modalBody");
+    const modalOkBtn = document.getElementById("modalOkBtn");
+
+    const MIN_INCREMENT = 1000;
+    let lastSubmitSucceeded = false;
+    function showError(msg){
+      errorText.textContent = msg;
+      errorText.style.display = "block";
+    }
+    function clearError(){
+      errorText.textContent = "";
+      errorText.style.display = "none";
+    }
+
+    function computeEligible(amount){
+      const a = Number(amount);
+      if (!Number.isFinite(a) || a <= 0) return { eligibleAmount: 0, eligible: false };
+      const eligibleAmount = Math.floor(a / MIN_INCREMENT) * MIN_INCREMENT;
+      return { eligibleAmount, eligible: eligibleAmount >= MIN_INCREMENT };
+    }
+
+    function updatePreview(){
+      const { eligibleAmount, eligible } = computeEligible(amountEl.value);
+      eligibleChip.textContent = `Eligible amount: ${eligibleAmount} USDT`;
+      eligibleFlagChip.innerHTML = `Status: ${eligible ? "ELIGIBLE &#9989;" : "NOT ELIGIBLE &#10060;"}`;
+      eligibleFlagChip.style.borderColor = eligible ? "rgba(124,255,202,.24)" : "rgba(255,211,106,.18)";
+      eligibleFlagChip.style.background = eligible ? "rgba(124,255,202,.07)" : "rgba(255,255,255,.04)";
+    }
+    amountEl.addEventListener("input", updatePreview);
+    updatePreview();
+
+    function isEmail(email){
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    }
+    function isWallet(addr){
+      return /^0x[a-fA-F0-9]{40}$/.test(addr);
+    }
+
+    // Accept:
+    // - 0x + 64 hex
+    // - 64 hex
+    // - URL that contains a tx hash (0x + 64 hex or 64 hex)
+    function isTxidOrLink(value){
+      const v = (value || "").trim();
+
+      const hash0x = /^0x[a-fA-F0-9]{64}$/;
+      const hash64 = /^[a-fA-F0-9]{64}$/;
+
+      if (hash0x.test(v) || hash64.test(v)) return true;
+
+      // try parse URL
+      try{
+        const u = new URL(v);
+        const inStr = u.href;
+        const match0x = inStr.match(/0x[a-fA-F0-9]{64}/);
+        const match64 = inStr.match(/(?<![a-fA-F0-9])[a-fA-F0-9]{64}(?![a-fA-F0-9])/);
+        return Boolean(match0x || match64);
+      }catch{
+        return false;
+      }
+    }
+
+    function openModal(message){
+      modalBody.textContent = message;
+      modalOverlay.style.display = "flex";
+    }
+function closeModal(){
+  modalOverlay.style.display = "none";
+
+  if (lastSubmitSucceeded) {
+    // reset form values + checkboxes + textarea
+    form.reset();
+
+    // clear visible UI states
+    clearError();
+    successBox.style.display = "none";
+
+    // clear query string in the URL (optional but recommended)
+    if (location.search) history.replaceState(null, "", location.pathname);
+
+    // refresh preview chips after reset
+    updatePreview();
+
+    // reset flag
+    lastSubmitSucceeded = false;
+
+    // optional: scroll back to top of the form
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+}
+
+
+    // ✅ Bind modal actions
+    modalOkBtn.addEventListener("click", closeModal);
+
+    // (Optional) Click outside modal to close
+    modalOverlay.addEventListener("click", (e) => {
+      if (e.target === modalOverlay) closeModal();
+    });
+
+    // (Optional) Press ESC to close
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && modalOverlay.style.display === "flex") closeModal();
+    });
+
+
+    function setSubmitting(isSubmitting){
+      submitBtn.disabled = isSubmitting;
+      btnSpinner.style.display = isSubmitting ? "inline-block" : "none";
+    }
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      clearError();
+      successBox.style.display = "none";
+
+      const payload = {
+        name_nickname: document.getElementById("nameNick").value.trim(),
+        email: document.getElementById("email").value.trim(),
+        upline_wallet: document.getElementById("uplineWallet").value.trim(),
+        upline_ref: document.getElementById("uplineRef").value.trim(),
+        downline_wallet: document.getElementById("downlineWallet").value.trim(),
+        downline_ref: document.getElementById("downlineRef").value.trim(),
+        txid: document.getElementById("txid").value.trim(), // can be hash or hyperlink
+        amount_usdt: document.getElementById("amount").value,
+        understand_checked: document.getElementById("understand").checked,
+        agree_checked: document.getElementById("agree").checked,
+        notes: document.getElementById("notes").value.trim(),
+        hp: document.getElementById("hp").value
+      };
+
+      if (!payload.name_nickname) return showError("Please enter your Name (Nickname).");
+      if (!payload.email || !isEmail(payload.email)) return showError("Please enter a valid Email address.");
+      if (!payload.upline_wallet || !isWallet(payload.upline_wallet)) return showError("Please enter a valid Upline wallet address (0x...).");
+      if (!payload.upline_ref) return showError("Please enter the Upline Ref No.");
+      if (!payload.downline_wallet || !isWallet(payload.downline_wallet)) return showError("Please enter a valid Downline wallet address (0x...).");
+      if (!payload.downline_ref) return showError("Please enter the Downline Ref No.");
+      if (!payload.txid || !isTxidOrLink(payload.txid)) return showError("Please enter a valid TXID or a hyperlink that contains the TX hash.");
+      const amountNum = Number(payload.amount_usdt);
+      if (!Number.isFinite(amountNum) || amountNum <= 0) return showError("Amount USDT must be a number greater than 0.");
+      if (!payload.understand_checked) return showError('Please tick "I understand".');
+      if (!payload.agree_checked) return showError('Please tick "I agree".');
+
+      setSubmitting(true);
+
+      try {
+        const res = await fetch(API_URL, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload)
+        });
+
+        const data = await res.json().catch(() => null);
+        if (!data || !data.ok) {
+          const msg = data?.error ? String(data.error) : "Submission failed. Please try again.";
+          showError(msg);
+          setSubmitting(false);
+          return;
+        }
+
+        successBox.style.display = "block";
+        const eligible = data.eligible_flag ? "ELIGIBLE" : "NOT ELIGIBLE";
+        successBox.textContent = `Submitted. Eligible amount: ${data.eligible_amount_usdt} USDT (${eligible}).`;
+
+        openModal(
+          `Your submission has been received successfully.\n\nEligible amount: ${data.eligible_amount_usdt} USDT\nStatus: ${eligible}\n\nThank you for joining the MOONPUMP Cashback & Reward Program.`
+        );
+        lastSubmitSucceeded = true;
+      } catch (err) {
+        showError("Network error. Please verify the endpoint and deployment permissions.");
+      } finally {
+        setSubmitting(false);
+      }
+    });
+
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement(
+        { pageLanguage: 'en', includedLanguages: 'en,th,zh-CN,zh-TW,ja,ko,vi,id,ms,es,fr,de,ru,ar,hi', layout: google.translate.TranslateElement.InlineLayout.SIMPLE },
+        'google_translate_element'
+      );
+    }
+    window.googleTranslateElementInit = googleTranslateElementInit;
+  </script>
+
+  <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+</html>
