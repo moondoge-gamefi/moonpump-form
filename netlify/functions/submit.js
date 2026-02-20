@@ -26,7 +26,7 @@ exports.handler = async (event) => {
 
   try {
     const APPS_SCRIPT_URL =
-      "https://script.google.com/macros/s/AKfycbzVpHByNFTyFRuaUR7bqH5qvffsnzJZlLK0LkqEcPHhYex9VgkaK1_K1CnJR8fYUX79vQ/exec";
+      "https://script.google.com/macros/s/AKfycbzbkDCAbTAYGNOfEL3jXPMogQt0qf_QEEvBedVnEVcj4LfnettHt3MapVXfpR2xjnogwg/exec";
 
     const res = await fetch(APPS_SCRIPT_URL, {
       method: "POST",

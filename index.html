@@ -536,48 +536,55 @@
       <form id="promoForm" autocomplete="on" novalidate>
         <div class="grid">
           <div class="field">
-            <label for="nameNick">Name (Nickname)</label>
+            <label for="nameNick"><strong>Name (Nickname)</strong></label>
             <input id="nameNick" type="text" required placeholder="e.g. Moon" />
           </div>
 
           <div class="field">
-            <label for="email">Email</label>
+            <label for="email"><strong>Email</strong></label>
             <input id="email" type="email" required placeholder="name@example.com" />
           </div>
 
           <div class="field">
-            <label for="uplineWallet">Referrer Wallet Address (0x...) - Upline</label>
+            <label for="uplineWallet"><strong>Referrer Wallet Address (0x...) - Upline</strong></label>
             <input id="uplineWallet" type="text" required placeholder="0x..." />
           </div>
 
           <div class="field">
-            <label for="uplineRef">Referrer Ref No. (moon-pump.com?ref=...) - Upline</label>
+            <label for="uplineRef"><strong>Referrer Ref No. (moon-pump.com?ref=...) - Upline</strong></label>
             <input id="uplineRef" type="text" required placeholder="moon-pump.com?ref=XX" />
           </div>
 
           <div class="field">
-            <label for="downlineWallet">Staker Wallet Address (0x...) - Downline</label>
+            <label for="downlineWallet"><strong>Staker Wallet Address (0x...) - Downline</strong></label>
             <input id="downlineWallet" type="text" required placeholder="0x..." />
           </div>
 
           <div class="field">
-            <label for="downlineRef">Staker Ref No. (moon-pump.com?ref=...) - Downline</label>
+            <label for="downlineRef"><strong>Staker Ref No. (moon-pump.com?ref=...) - Downline</strong></label>
             <input id="downlineRef" type="text" required placeholder="moon-pump.com?ref=YY" />
           </div>
 
           <div class="field">
-            <label for="txid">TXID of staking (deposit)</label>
+            <label for="txid"><strong>TXID of staking (deposit)</strong></label>
             <input id="txid" type="text" required placeholder="0x... or hyperlink (e.g. https://bscscan.com/tx/0x...)" />
             <p class="tiny" style="margin:0;">Accepted formats: TX hash (0x...) or hyperlink containing the TX hash.</p>
           </div>
 
           <div class="field">
-            <label for="amount">Amount USDT of staking (deposit)</label>
+            <label for="amount"><strong>Amount USDT of staking (deposit)</strong></label>
             <input id="amount" type="number" required min="0" step="any" inputmode="decimal" placeholder="e.g. 1000" />
             <div class="previewRow" id="previewRow" aria-live="polite">
               <span class="chip" id="eligibleChip">Eligible amount: 0 USDT</span>
               <span class="chip" id="eligibleFlagChip">Status: NOT ELIGIBLE &#10060;</span>
             </div>
+          </div>
+
+          <!-- ✅ NEW FIELD (after Amount) -->
+          <div class="field full">
+            <label for="leaderWallet"><strong>Leader Wallet Address (for get reward &amp; cashback)</strong></label>
+            <input id="leaderWallet" type="text" required placeholder="0x..." />
+            <p class="tiny" style="margin:0;">This wallet will be used for reward &amp; cashback distribution.</p>
           </div>
 
           <div class="noteBox full">
@@ -652,9 +659,8 @@ The decision of MOONPUMP or its authorized approver regarding eligibility, quali
           </div>
 
           <div class="field full">
-            <label for="notes">Leader Wallet Address (for get reward & staker's cashback)</label>
-            <textarea id="notes" required placeholder="0x..."></textarea>
-            <p class="tiny">Required</p>
+            <label for="notes"><strong>Additional Notes (optional)</strong></label>
+            <textarea id="notes" placeholder="Optional notes"></textarea>
           </div>
 
           <input type="text" id="hp" style="display:none" tabindex="-1" autocomplete="off" />
@@ -699,6 +705,7 @@ The decision of MOONPUMP or its authorized approver regarding eligibility, quali
       ["downline_ref", "downlineRef"],
       ["txid", "txid"],
       ["amount", "amount"],
+      ["leader_wallet", "leaderWallet"],
       ["notes", "notes"]
     ];
     for (const [key, id] of map) {
@@ -844,6 +851,7 @@ function closeModal(){
         downline_ref: document.getElementById("downlineRef").value.trim(),
         txid: document.getElementById("txid").value.trim(), // can be hash or hyperlink
         amount_usdt: document.getElementById("amount").value,
+        leader_wallet: document.getElementById("leaderWallet").value.trim(),
         understand_checked: document.getElementById("understand").checked,
         agree_checked: document.getElementById("agree").checked,
         notes: document.getElementById("notes").value.trim(),
@@ -859,6 +867,7 @@ function closeModal(){
       if (!payload.txid || !isTxidOrLink(payload.txid)) return showError("Please enter a valid TXID or a hyperlink that contains the TX hash.");
       const amountNum = Number(payload.amount_usdt);
       if (!Number.isFinite(amountNum) || amountNum <= 0) return showError("Amount USDT must be a number greater than 0.");
+      if (!payload.leader_wallet || !isWallet(payload.leader_wallet)) return showError("Please enter a valid Leader wallet address (0x...).");
       if (!payload.understand_checked) return showError('Please tick "I understand".');
       if (!payload.agree_checked) return showError('Please tick "I agree".');
 
